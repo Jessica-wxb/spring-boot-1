@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dmsdbj.team.springbootdemo.entity.User;
 import com.dmsdbj.team.springbootdemo.service.IUserService;
-import lombok.extern.java.Log;
+import com.dmsdbj.team.springbootdemo.util.log.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,6 +41,7 @@ public class UserController implements IUserController {
     }
 
     @Override
+    @Log
     public IPage getUserList(Page page) {
         log.info("用户输入的查询条件：[{}]", page.toString());
         IPage iPage = userService.page(page);

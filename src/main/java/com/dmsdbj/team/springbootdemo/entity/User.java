@@ -71,6 +71,10 @@ public class User implements Serializable {
     @JsonIgnore
     private Integer deleted;
 
+    // 这里需要标记为填充字段
+    @TableField(fill =FieldFill.INSERT)
+    private String fillField;
+
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @TableField(fill = FieldFill.INSERT)
@@ -89,6 +93,8 @@ public class User implements Serializable {
      * @TableName(autoResultMap = true)
      *
      * 以下两种类型处理器，二选一 也可以同时存在
+     *
+     * 注解填充字段 @TableField() 生成器策略部分也可以配置！
      *
      * 注意！！选择对应的 JSON 处理器也必须存在对应 JSON 解析依赖包
      */

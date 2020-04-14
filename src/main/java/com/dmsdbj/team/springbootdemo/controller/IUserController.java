@@ -3,6 +3,7 @@ package com.dmsdbj.team.springbootdemo.controller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dmsdbj.team.springbootdemo.entity.User;
+import com.dmsdbj.team.springbootdemo.util.log.Log;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -25,6 +26,7 @@ public interface IUserController {
 
     @ApiOperation(value = "查询所有用户")
     @GetMapping("/user/list")
+
     IPage getUserList(@ApiParam(value = "page", required = true) Page page);
 
    @ApiOperation(value = "根据UserId删除一个用户",notes = "请输入主键id进行查询")
