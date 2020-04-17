@@ -22,7 +22,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
         if (createFieldType == null) {
             setFieldValByName("createTime", new Date(), metaObject);
         }
-        if (updateFieldType == null) {
+         if (updateFieldType == null) {
             setFieldValByName("createTime", new Date(), metaObject);
         }
     }
