@@ -32,7 +32,7 @@ public class LogAop {
 
 /**
      * 在所有标注@Log的地方切入
-     *
+     *指定当前执行方法在log()之前执行
      * @param joinPoint
      */
 
@@ -41,6 +41,10 @@ public class LogAop {
         time.set(System.currentTimeMillis());
     }
 
+    /**
+     * 执行当前方法在log()方法执行之后执行
+     * @param joinPoint
+     */
     @After("log()")
     public void afterExec(JoinPoint joinPoint) {
         tag.set(IdWorker.getIdStr());
